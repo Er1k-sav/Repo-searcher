@@ -1,0 +1,79 @@
+:root {
+    --clr-primary: rgb(19, 25, 34);
+    --clr-secondary: rgba(16, 16, 16, 0.5);
+    --clr-light: rgb(219, 233, 233);
+    --clr-warning: rgba(238, 6, 6, 0.5);
+}
+  
+*, *::before, *::after {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-primary);
+}
+
+#dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#help {
+    position: absolute;
+    background: none;
+    width: 5%;
+    height: 5%;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(39, 51, 70);
+    z-index: 2;
+    font-size: 13vh;
+    text-align: center;
+    font-family: monospace;
+    transition: 500ms;
+}
+
+#help:hover {
+    transform: rotate(5deg);
+}
+
+#info {
+    position: absolute;
+    top: 40%;
+    background-color: rgba(8, 11, 15, 0.5);
+    height: 10%;
+    width: 17%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2.8vh;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: rgb(39, 51, 70);
+    left: 1.9%;
+    top: 18%;
+    opacity: 0;
+    transition: 500ms;
+}
+
+#thingy {
+    position: absolute;
+    background: none;
+    top: -20%;
+    z-index: 3;
+    height: 11.5%;
+    border-bottom: 11.5px solid rgba(8, 11, 15, 0.5);
+    border-right: 12px solid transparent;
+}
+
+#computerVisualizationArea {
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    left: 10%;
+    top: 5%;
+}
