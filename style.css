@@ -205,3 +205,47 @@ body {
     height: 100%;
 }
 
+#source {
+    position: absolute;
+    width: 14%;
+    height: 5%; 
+    left:50%;
+    top: 50%;
+
+}
+
+#circle {
+    position: absolute;
+    top: 55%;
+    width: 10%;
+    height: 45%;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+#ballTitle {
+    position: fixed;
+    width: 100%;
+    height: 50%;
+    color: rgb(73, 73, 73);
+    font-family: monospace;
+    font-size: 2vh;
+    z-index: 2;
+}
+
+#homePage {
+    opacity: 0;
+}
+
+#node {
+    position: absolute;
+    width: 14%;
+    height: 5%; 
+    float: left;
+    top: 38%;
+    left: 50%;
+    transition: 700ms;
+    animation: spawn 0.5s steps(30, end)
+}
+
+
