@@ -148,6 +148,8 @@ body {
     height: 90%;
     top: 5%;
     left: 0%;
+    opacity: 0;
+    transition: 500ms;
 }
 
 #sidebar {
@@ -157,7 +159,7 @@ body {
 }
 
 
-#search {
+#searchInput {
     position: absolute;
     left: 5%;
     width: 64%;
@@ -170,18 +172,44 @@ body {
     color: rgb(39, 51, 70);
 }
 
-#suggestions {
+#searchInput:focus ~ .suggestions {
+    opacity: 1;
+}
+
+.suggestions {
     position: absolute;
     left: 5%;
-    top: 10%;
+    top: 8%;
     width: 64%;
-    height: 64%;
     border-radius: 4px;
-    font-size: 3.2vh;
+    font-size: 2vhvh;
+    background-color: rgba(0, 0, 0, 0.301);
     font-family: monospace;
-    color: rgb(39, 51, 70);
+    color: rgb(73, 66, 66);
     overflow-y: auto;
+    opacity: 0;
+    transition: 500ms;
 }
+
+ul {
+    display: flexbox;
+    list-style-type: none;
+    text-align: left;
+    width: 80%;
+    height: 100%;
+    left: -20%;
+}
+
+li {
+    position: sticky;
+    height: 25%;
+    width: 100%;
+    text-align: left;
+    word-wrap: normal;
+    white-space: pre-line;
+    margin-bottom: 5%;
+}
+
 
 #visualizeBT {
     position: absolute;
@@ -225,27 +253,36 @@ body {
 
 #ballTitle {
     position: fixed;
-    width: 100%;
-    height: 50%;
-    color: rgb(73, 73, 73);
+    width: 15%;
+    height: 5%;
+    color: rgb(39, 51, 70);
     font-family: monospace;
     font-size: 2vh;
     z-index: 2;
+    transition: 500ms;
+}
+
+#ballTitle:hover {
+    color: orange;
 }
 
 #homePage {
-    opacity: 0;
+    position: absolute;
+    opacity: 1;
+    width: 98%;
+    height: 95%;
+    z-index: 7;
 }
 
-#node {
+.nodeClass {
     position: absolute;
     width: 14%;
     height: 5%; 
     float: left;
-    top: 38%;
-    left: 50%;
+    bottom: auto;
+    top: auto;
+    left: auto;
+    right: auto;
     transition: 700ms;
     animation: spawn 0.5s steps(30, end)
 }
-
-
