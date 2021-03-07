@@ -65,7 +65,7 @@ window.onload = () => {
             node.className = "nodeClass";
             circle.id = "circle";
             title.id = "ballTitle";
-            title.innerHTML = "Er1-sav/arraySorting"
+            title.innerHTML = "";
 
             viewArea.appendChild(node);
             node.appendChild(circle);
