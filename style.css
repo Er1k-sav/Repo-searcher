@@ -237,10 +237,96 @@ li {
     position: absolute;
     width: 14%;
     height: 5%; 
-    left:50%;
-    top: 50%;
-
+    left: 28%;
+    top: 47%;
+    opacity: 0;
+    transition: 200ms;
 }
+
+.arrow {
+    position: absolute;
+    background-color: rgb(66, 71, 78);
+    width: 1.2%;
+    height: 175%;
+    z-index: 0;
+    transition: 200ms;
+}
+
+#arrowContainer {
+    opacity: 0;
+    transition: 600ms;
+}
+
+#arrow1 {
+    position: absolute;
+    left: 4.5%;
+    top: -140%;
+}
+
+#arrow2 {
+    position: absolute;
+    left: 4.5%;
+    top: 115%;
+    transform:rotate(180deg);
+    
+}
+
+#arrow3 {
+    transform: rotate(58deg);
+    position: absolute;
+    top: -80%;
+    left: 32%;
+    height: 182%;
+}
+
+#arrow4 {
+    transform: rotate(-58deg);
+    position: absolute;
+    top: -80%;
+    left: -23%;
+    height: 182%;
+}
+
+#arrow5 {
+    transform: rotate(-121deg);
+    position: absolute;
+    top: 48%;
+    left: -23%;
+    height: 182%;
+}
+
+#arrow6 {
+    transform: rotate(121deg);
+    position: absolute;
+    top: 48%;
+    left: 32%;
+    height: 182%;
+    animation: length 0.5s steps(30, end);
+}
+
+@keyframes length {
+    from {
+        height: 0%
+    }
+    to {
+        height: 182%
+    }
+}
+
+
+
+#tip {
+    position: absolute;
+    left: -120%;
+    border: 1.2px solid rgb(66, 71, 78);
+    border-width: 0 1.2px 1.2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+
 
 #circle {
     position: absolute;
@@ -262,7 +348,22 @@ li {
     transition: 500ms;
 }
 
+#linkTitle {
+    position: fixed;
+    width: 15%;
+    height: 5%;
+    color: rgb(39, 51, 70);
+    font-family: monospace;
+    font-size: 2vh;
+    z-index: 2;
+    transition: 500ms;
+}
+
 #ballTitle:hover {
+    color: orange;
+}
+
+#linkTitle:hover {
     color: orange;
 }
 
