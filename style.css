@@ -1,5 +1,5 @@
 :root {
-    --clr-primary: rgb(19, 25, 34);
+    --clr-primary: #1D2228;
     --clr-secondary: rgba(16, 16, 16, 0.5);
     --clr-light: rgb(219, 233, 233);
     --clr-warning: rgba(238, 6, 6, 0.5);
@@ -29,7 +29,7 @@ body {
     width: 5%;
     height: 5%;
     color: transparent;
-    -webkit-text-stroke: 2px rgb(39, 51, 70);
+    -webkit-text-stroke: 2px #383f47;
     z-index: 2;
     font-size: 13vh;
     text-align: center;
@@ -49,25 +49,15 @@ body {
     width: 17%;
     text-align: center;
     font-family: monospace;
-    font-size: 2.8vh;
+    font-size: 2.75vh;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    color: rgb(39, 51, 70);
+    color: #E1E2E2;
     left: 1.9%;
     top: 18%;
     opacity: 0;
     transition: 500ms;
-}
-
-#thingy {
-    position: absolute;
-    background: none;
-    top: -20%;
-    z-index: 3;
-    height: 11.5%;
-    border-bottom: 11.5px solid rgba(8, 11, 15, 0.5);
-    border-right: 12px solid transparent;
 }
 
 #computerVisualizationArea {
@@ -86,14 +76,14 @@ body {
     height: 7%;
     font-size: 5.5vh;
     font-family: monospace;
-    color: rgb(39, 51, 70);
+    color: #525961;
     text-shadow: black;
     overflow: hidden;
   	letter-spacing: 2px;
  	animation: typing 5s steps(30, end), blink .75s step-end infinite;
     white-space: nowrap;
     font-weight: 700;
-    border-right: 2px solid orange;
+    border-right: 2px solid #FB8122;
     box-sizing: border-box;
 }
 
@@ -128,7 +118,7 @@ body {
     font-size: 4vh;
     text-align: center;
     border-radius: 4px;
-    color: rgb(39, 51, 70);
+    color: #E1E2E2;
     transition: 500ms;
     animation: appear 5s steps(30, end)
 }
@@ -169,7 +159,7 @@ body {
     border: 4px solid rgb(8, 11, 15);
     font-size: 3.2vh;
     font-family: monospace;
-    color: rgb(39, 51, 70);
+    color: #525961;
 }
 
 #searchInput:focus ~ .suggestions {
@@ -219,12 +209,14 @@ li {
     background-color: rgba(8, 11, 15, 0.5);
     border: 4px solid rgb(8, 11, 15);
     font-family: monospace;
-    font-size: 3.3vh;
+    font-size: 3vh;
     text-align: center;
     border-radius: 4px;
-    color: rgb(39, 51, 70);
+    color: #E1E2E2;
     transition: 500ms;
 }
+
+
 
 #visualizationArea {
     position: absolute;
@@ -341,7 +333,7 @@ li {
     position: fixed;
     width: 15%;
     height: 5%;
-    color: rgb(39, 51, 70);
+    color: #525961;
     font-family: monospace;
     font-size: 2vh;
     z-index: 2;
@@ -352,7 +344,7 @@ li {
     position: fixed;
     width: 15%;
     height: 5%;
-    color: rgb(39, 51, 70);
+    color: #525961;
     font-family: monospace;
     font-size: 2vh;
     z-index: 2;
@@ -360,11 +352,11 @@ li {
 }
 
 #ballTitle:hover {
-    color: orange;
+    color: #FB8122;
 }
 
 #linkTitle:hover {
-    color: orange;
+    color: #FB8122;
 }
 
 #homePage {
