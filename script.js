@@ -1,6 +1,4 @@
 window.onload = () => {
-    const helpBt = document.querySelector("#help");
-    const info = document.querySelector("#info");
     const homePage = document.querySelector("#homePage");
     const app = document.querySelector("#app");
     const startBT = document.querySelector("#startBT");
@@ -46,11 +44,6 @@ window.onload = () => {
         .join('');
         suggestions.innerHTML = `<ul>${content}</ul>`;
     }
-
-    
-    helpBt.addEventListener("click", () => {
-        info.style.opacity = 1;
-    })
 
     var startVisualization = () => {
         startBT.addEventListener("click", () => {
