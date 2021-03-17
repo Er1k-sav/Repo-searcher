@@ -35,11 +35,16 @@ body {
     text-align: center;
     font-family: monospace;
     transition: 500ms;
+    z-index: 21;
 }
 
 #help:hover {
     transform: rotate(5deg);
 }
+
+#help:active ~ #info {
+    opacity: 1;
+} 
 
 #info {
     position: absolute;
@@ -49,7 +54,7 @@ body {
     width: 17%;
     text-align: center;
     font-family: monospace;
-    font-size: 2.75vh;
+    font-size: 2vh;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -175,7 +180,7 @@ body {
     font-size: 2vhvh;
     background-color: rgba(0, 0, 0, 0.301);
     font-family: monospace;
-    color: rgb(73, 66, 66);
+    color: rgb(104, 94, 94);
     overflow-y: auto;
     opacity: 0;
     transition: 500ms;
@@ -193,11 +198,12 @@ ul {
 li {
     position: sticky;
     height: 25%;
-    width: 100%;
+    width: 120%;
     text-align: left;
     word-wrap: normal;
     white-space: pre-line;
     margin-bottom: 5%;
+    overflow-wrap: break-word;
 }
 
 
@@ -205,6 +211,21 @@ li {
     position: absolute;
     left: 83%;
     width: 31%;
+    height: 7%;
+    background-color: rgba(8, 11, 15, 0.5);
+    border: 4px solid rgb(8, 11, 15);
+    font-family: monospace;
+    font-size: 3vh;
+    text-align: center;
+    border-radius: 4px;
+    color: #E1E2E2;
+    transition: 500ms;
+}
+
+#redo {
+    position: absolute;
+    left: 114.9%;
+    width: 25%;
     height: 7%;
     background-color: rgba(8, 11, 15, 0.5);
     border: 4px solid rgb(8, 11, 15);
@@ -294,6 +315,7 @@ input::-webkit-inner-spin-button {
     left: 4.5%;
     top: -140%;
     opacity: 0;
+    width: 1.4%;
 }
 
 #arrow6 {
@@ -302,6 +324,7 @@ input::-webkit-inner-spin-button {
     top: 115%;
     transform:rotate(180deg);
     opacity: 0;
+    width: 1.4%;
 }
 
 #arrow3 {
@@ -447,7 +470,7 @@ input::-webkit-inner-spin-button {
     left: -60%;
     top: -360%;
     width: 130%;
-    height: 400%;
+    height: 415%;
     border-radius: 4px;
     font-size: 3.2vh;
     text-align: center;
@@ -474,31 +497,32 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: 2%;
     left: 2%;
-    background: url('');
     width: 20%;
     height: 28%;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.301);
+    background-size: 100% 100%;
 }
 
 #name {
     position: absolute;
-    width: 10%;
+    width: 70%;
     height: 10%;
     left: 23.5%;
     top: 2%;
     font-size: 2vh;
     font-weight: normal;
     color: #E1E2E2;
+    overflow-wrap: break-word;
 }
 
 #description {
     position: absolute;
     width: 95%;
-    height: 60%;
+    height: auto;
     left: 2%;
-    top: 20%;
+    top: 39%;
     font-size: 2vh;
     font-weight: normal;
     color: #E1E2E2;
+    overflow-wrap: break-word;
 }
