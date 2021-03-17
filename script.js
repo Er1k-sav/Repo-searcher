@@ -16,14 +16,22 @@ window.onload = () => {
     const arrow6 = document.querySelector("#arrow6");
     const numOfNodesInput = document.querySelector("#numOfNodes");
     var criterion = "";
+    var names = [];
+    var pfps = [];
+    var descriptions = [];
+    var urls = [];
     var nodesNum = 6;
     var linksNum = 0;
     var searchData = [
-        "-Express, a very powerfull js ",
-        "-Nodejs",
-        "-MongoDB",
-        "-React",
-        "-Elixir"
+        "-Vue.js, is a JavaScript library for developing web interfaces",
+        "-Npm, is also known as Node Package Manager",
+        "-React, is an open-source front-end library 2013",
+        "-Angular, is an open-source technology",
+        "-Flutter, an open-source UI development kit",
+        "-Ruby on Rails, is backend technology that facilitates app development",
+        "-Django, is a highly customizable and scalable backend technology",
+        "-Phoenix, works with Erlang’s Virtual Machine",
+        "-Express framework includes great routing API"
     ];
     var results = [];
     searchInput.addEventListener("input", (e) => {
@@ -50,8 +58,6 @@ window.onload = () => {
             homePage.style.opacity = 0;
             homePage.style.zIndex = -5;
             app.style.opacity = 1;
-            helpBt.style.right = 5 + "%";
-            info.style.right = 5 + "%";
         })
     }
  
@@ -73,13 +79,17 @@ window.onload = () => {
             node.className = "nodeClass";
             circle.id = "circle";
             title.id = "linkTitle";
-            title.innerHTML = "Er1k-sav/ArraySorting";
+            title.innerHTML = names[i];
+            title.href = "" + urls[i];
             box.className = "classBox";
             box.id = "box" 
             pfp.id = "pfp";
             name.id = "name";
-            name.innerHTML = "Er1k-sav/arraySorting";
+            name.innerHTML = names[i];
+            pfp.style.backgroundImage = "url(" + pfps[i] + ")";
+            
             description.id = "description";
+            description.innerHTML = descriptions[i];
 
             viewArea.appendChild(node);
             node.appendChild(circle);
@@ -240,12 +250,17 @@ window.onload = () => {
             let value = searchInput.value.toLowerCase();
             criterion = value;
             ballTitle.innerHTML = criterion;
-            tree(source);
+            setTimeout(() => {tree(source)}, 2500);
             source.style.opacity = 1;
             fetch('https://api.github.com/search/repositories?q=' + criterion) 
                 .then(response => response.json())
                 .then(data => {
-                    console.log(JSON.stringify(data))
+                    for (let n = 0; n < nodesNum; n++) {
+                        names.push(JSON.stringify(data.items[n].full_name));
+                        pfps.push(JSON.stringify(data.items[n].owner.avatar_url));
+                        descriptions.push(JSON.stringify(data.items[n].description));
+                        urls.push(JSON.stringify(data.items[n].html_url));
+                    }
                 })
         })
     }
