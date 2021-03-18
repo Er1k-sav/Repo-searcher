@@ -1,5 +1,7 @@
 window.onload = () => {
     const homePage = document.querySelector("#homePage");
+    const helpBT = document.querySelector("#help");
+    const info = document.querySelector("#info");
     const app = document.querySelector("#app");
     const startBT = document.querySelector("#startBT");
     const searchInput = document.querySelector("#searchInput");
@@ -58,6 +60,8 @@ window.onload = () => {
             homePage.style.opacity = 0;
             homePage.style.zIndex = -5;
             app.style.opacity = 1;
+            helpBT.style.right = 1.9 + "%";
+            info.style.left = 80 + "%";
         })
     }
  
@@ -80,7 +84,8 @@ window.onload = () => {
             circle.id = "circle";
             title.id = "linkTitle";
             title.innerHTML = names[i];
-            title.href = "" + urls[i];
+            title.href = urls[i].replace(/['"]+/g, '');
+            title.target = "_blank";
             box.className = "classBox";
             box.id = "box" 
             pfp.id = "pfp";
