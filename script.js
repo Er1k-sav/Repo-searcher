@@ -17,6 +17,8 @@ window.onload = () => {
     const arrow5 = document.querySelector("#arrow5");
     const arrow6 = document.querySelector("#arrow6");
     const numOfNodesInput = document.querySelector("#numOfNodes");
+    const slider = document.querySelector("#slider");
+    var theme = false;
     var criterion = "";
     var names = [];
     var pfps = [];
@@ -36,6 +38,30 @@ window.onload = () => {
         "-Express framework includes great routing API"
     ];
     var results = [];
+
+    slider.addEventListener("click", () => {
+        if (theme === false) {
+            document.body.style.backgroundColor = "var(--clr-light)";
+            document.querySelector(".suggestions").style.color = "#fff"; 
+            document.querySelector("#numInfo").style.color = "#fff";
+            document.querySelector("#visualizationArea").style.color = "#fff";
+            document.querySelector("#startBT").style.backgroundColor = "grey";
+            document.querySelector("#startBT").style.border = "4px solid darkslategrey"
+            document.querySelector("#startBT").style.borderBottom = "12px solid darkslategrey";
+            slider.style.left = "54%";
+            theme = true;
+        } else {
+            document.body.style.backgroundColor = "var(--clr-primary)"
+            document.querySelector(".suggestions").style.color = "#fff"; 
+            document.querySelector("#numInfo").style.color = "rgb(73, 66, 66)";
+            document.querySelector("#visualizationArea").style.color = "rgb(104, 94, 94)";
+            document.querySelector("#startBT").style.backgroundColor = "rgba(8, 11, 15, 0.5)";
+            document.querySelector("#startBT").style.border = "4px solid rgb(8, 11, 15)"
+            document.querySelector("#startBT").style.borderBottom = "12px solid rgb(8, 11, 15)s";
+            slider.style.left = "-14%"
+            theme = false;
+        }
+    })
     searchInput.addEventListener("input", (e) => {
         let input = searchInput.value;
         if (input.length) {
@@ -61,7 +87,8 @@ window.onload = () => {
             homePage.style.zIndex = -5;
             app.style.opacity = 1;
             helpBT.style.right = 1.9 + "%";
-            info.style.left = 80 + "%";
+            info.style.left = 75 + "%";
+            document.querySelector("#container").style.left = "94%";
         })
     }
  
@@ -250,6 +277,12 @@ window.onload = () => {
         })
     }
 
+    var links = () => {
+        for (let i = 0; i < linksNum; i++) {
+            
+        }
+    }
+
     var visualize = () => {
         visualieBT.addEventListener("click", () => {
             let value = searchInput.value.toLowerCase();
@@ -269,6 +302,8 @@ window.onload = () => {
                 })
         })
     }
+
+    
     visualize();
     getNumOfNodes();
     startVisualization();
