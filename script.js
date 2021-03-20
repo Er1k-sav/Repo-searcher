@@ -276,10 +276,34 @@ window.onload = () => {
             nodesNum = value;
         })
     }
+    var n = 0;
+    var main = document.querySelector("#visualizationArea");
+    var getCheckValue = () => {
+        let container = document.querySelectorAll(".nodeClass");
+        for (let elem of container) {
+            if (elem.className === "nodeClass") {
+                n++;
+                console.log(n)
+            }
+        }
+        main.style.opacity = 0;
+        check();
+    }
 
-    var links = () => {
-        for (let i = 0; i < linksNum; i++) {
-            
+    var check = () => {
+        let loading = document.querySelector("#loadingText");
+        let success = document.querySelector("#successfullLoading");
+        let unsuccess = document.querySelector("#unsuccessfullLoading");
+        loading.style.opacity = 1;
+        console.log(n)
+        if (n == nodesNum) {
+            setTimeout(() => {loading.style.opacity = 0}, 1000);
+            setTimeout(() => {success.style.opacity = 1}, 1300);
+            setTimeout(() => {success.style.opacity = 0}, 3300);
+            setTimeout(() => {main.style.opacity = 1}, 3400);
+        } else {
+            setTimeout(() => {loading.style.opacity = 0}, 1000);
+            setTimeout(() => {unsuccess.style.opacity = 1}, 1300);
         }
     }
 
@@ -288,16 +312,18 @@ window.onload = () => {
             let value = searchInput.value.toLowerCase();
             criterion = value;
             ballTitle.innerHTML = criterion;
+            setTimeout(() => {getCheckValue()}, 3500);
             setTimeout(() => {tree(source)}, 2500);
             source.style.opacity = 1;
             fetch('https://api.github.com/search/repositories?q=' + criterion) 
                 .then(response => response.json())
                 .then(data => {
                     for (let n = 0; n < nodesNum; n++) {
-                        names.push(JSON.stringify(data.items[n].full_name));
-                        pfps.push(JSON.stringify(data.items[n].owner.avatar_url));
-                        descriptions.push(JSON.stringify(data.items[n].description));
-                        urls.push(JSON.stringify(data.items[n].html_url));
+                        names.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].full_name));
+                        console.log(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].full_name));
+                        pfps.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].owner.avatar_url));
+                        descriptions.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].description));
+                        urls.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].html_url));
                     }
                 })
         })
