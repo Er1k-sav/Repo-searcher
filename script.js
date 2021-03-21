@@ -6,6 +6,7 @@ window.onload = () => {
     const startBT = document.querySelector("#startBT");
     const searchInput = document.querySelector("#searchInput");
     const visualieBT = document.querySelector("#visualizeBT");
+    const redo = document.querySelector("#continue");
     const suggestions = document.querySelector(".suggestions");
     const source = document.querySelector("#source");
     const ballTitle = document.querySelector("#ballTitle");
@@ -18,6 +19,7 @@ window.onload = () => {
     const arrow6 = document.querySelector("#arrow6");
     const numOfNodesInput = document.querySelector("#numOfNodes");
     const slider = document.querySelector("#slider");
+    const popup = document.querySelector("#hint");
     var theme = false;
     var criterion = "";
     var names = [];
@@ -26,6 +28,7 @@ window.onload = () => {
     var urls = [];
     var nodesNum = 6;
     var linksNum = 0;
+    var inAction = false;
     var searchData = [
         "-Vue.js, is a JavaScript library for developing web interfaces",
         "-Npm, is also known as Node Package Manager",
@@ -130,13 +133,6 @@ window.onload = () => {
             box.appendChild(name);
             box.appendChild(description);
             node.appendChild(box);
-
-            const node1 = document.querySelector("#node0");
-            const node2 = document.querySelector("#node1");
-            const node3 = document.querySelector("#node2");
-            const node4 = document.querySelector("#node3");
-            const node5 = document.querySelector("#node4");
-            const node6 = document.querySelector("#node5");
             const style = getComputedStyle(source);
             let n1top = parseInt(style.top) - 70 + "px";
             let n1Left = parseInt(style.left) + 1 + "px";
@@ -150,124 +146,35 @@ window.onload = () => {
             let n5left = parseInt(style.left) + 68 + "px";
             let n6top = parseInt(style.top) + 70 + "px";
             let n6left = parseInt(style.left) + 1 + "px";
-            if (id === 0) {
-                node1.style.top = n1top;
-                node1.style.left = n1Left;
-                arrow1.style.opacity = 1;
-                node1.style.opacity = 1;
-            } else if (id === 1) {
-                node1.style.top = n1top;
-                node1.style.left = n1Left;
-                node2.style.top = n2top;
-                node2.style.left = n2left;
-                arrow1.style.opacity = 1;
+            let nodeInstance = document.querySelector("#node" + i);
+            nodeInstance.style.top = n1top; nodeInstance.style.left = n1Left;
+            arrow1.style.opacity = 1;
+            if (id === 1) {
+                nodeInstance.style.top = n2top; nodeInstance.style.left = n2left;
+                nodeInstance.style.opacity = 1;
                 arrow2.style.opacity = 1;
-                node1.style.opacity = 1;
-                node2.style.opacity = 1;
             } else if (id === 2) {
-                node1.style.top = n1top;
-                node1.style.left = n1Left;
-                node2.style.top = n2top;
-                node2.style.left = n2left;
-                node3.style.top = n3top;
-                node3.style.left = n3left;
-                arrow1.style.opacity = 1;
-                arrow2.style.opacity = 1;
+                nodeInstance.style.top = n3top; nodeInstance.style.left = n3left;
+                nodeInstance.style.opacity = 1;
                 arrow3.style.opacity = 1;
-                node1.style.opacity = 1;
-                node2.style.opacity = 1;
-                node3.style.opacity = 1;
             } else if (id === 3) {
-                node1.style.top = n1top;
-                node1.style.left = n1Left;
-                node2.style.top = n2top;
-                node2.style.left = n2left;
-                node3.style.top = n3top;
-                node3.style.left = n3left;
-                node4.style.left = n4left;
-                node4.style.top = n4top; 
-                arrow1.style.opacity = 1;
-                arrow2.style.opacity = 1;
-                arrow3.style.opacity = 1;
+                nodeInstance.style.top = n4top; nodeInstance.style.left = n4left;
+                nodeInstance.style.opacity = 1;
                 arrow4.style.opacity = 1;
-                node1.style.opacity = 1;
-                node2.style.opacity = 1;
-                node3.style.opacity = 1;
-                node4.style.opacity = 1;
-                id = 4
             } else if (id === 4) {
-                node1.style.top = n1top;
-                node1.style.left = n1Left;
-                node2.style.top = n2top;
-                node2.style.left = n2left;
-                node3.style.top = n3top;
-                node3.style.left = n3left;
-                node4.style.left = n4left;
-                node4.style.top = n4top; 
-                node5.style.left = n5left;
-                node5.style.top = n5top; 
-                arrow1.style.opacity = 1;
-                arrow2.style.opacity = 1;
-                arrow3.style.opacity = 1;
-                arrow4.style.opacity = 1;
+                nodeInstance.style.top = n5top; nodeInstance.style.left = n5left;
+                nodeInstance.style.opacity = 1;
                 arrow5.style.opacity = 1;
-                node1.style.opacity = 1;
-                node2.style.opacity = 1;
-                node3.style.opacity = 1;
-                node4.style.opacity = 1;
-                node5.style.opacity = 1;
             } else if (id === 5) {
-                node1.style.top = n1top;
-                node1.style.left = n1Left;
-                node2.style.top = n2top;
-                node2.style.left = n2left;
-                node3.style.top = n3top;
-                node3.style.left = n3left;
-                node4.style.left = n4left;
-                node4.style.top = n4top; 
-                node5.style.left = n5left;
-                node5.style.top = n5top; 
-                node6.style.top = n6top;
-                node6.style.left = n6left;
-                arrow1.style.opacity = 1;
-                arrow2.style.opacity = 1;
-                arrow3.style.opacity = 1;
-                arrow4.style.opacity = 1;
-                arrow5.style.opacity = 1;
+                nodeInstance.style.top = n6top; nodeInstance.style.left = n6left;
+                nodeInstance.style.opacity = 1;
                 arrow6.style.opacity = 1;
-                node1.style.opacity = 1;
-                node2.style.opacity = 1;
-                node3.style.opacity = 1;
-                node4.style.opacity = 1;
-                node5.style.opacity = 1;
-                node6.style.opacity = 1;
-            } else if (id === 6) {
-                node1.style.top = n1top;
-                node1.style.left = n1Left;
-                node2.style.top = n2top;
-                node2.style.left = n2left;
-                node3.style.top = n3top;
-                node3.style.left = n3left;
-                node4.style.left = n4left;
-                node4.style.top = n4top; 
-                node5.style.left = n5left;
-                node5.style.top = n5top; 
-                node6.style.top = n6top;
-                node6.style.left = n6left;
-                arrow1.style.opacity = 1;
-                arrow2.style.opacity = 1;
-                arrow3.style.opacity = 1;
-                arrow4.style.opacity = 1; 
-                arrow5.style.opacity = 1; 
-                arrow6.style.opacity = 1;
-                node1.style.opacity = 1;
-                node2.style.opacity = 1;
-                node3.style.opacity = 1;
-                node4.style.opacity = 1;
-                node5.style.opacity = 1;
-                node6.style.opacity = 1;
             }
         }
+    }
+
+    var setNodes = () => {
+        let items = document.querySelector("")
     }
 
     var getNumOfNodes = () => {
@@ -301,9 +208,19 @@ window.onload = () => {
             setTimeout(() => {success.style.opacity = 1}, 1300);
             setTimeout(() => {success.style.opacity = 0}, 3300);
             setTimeout(() => {main.style.opacity = 1}, 3400);
+            inAction = true;
+            setTimeout(() => {popupF()}, 10000);
+            setTimeout(() => {popup.style.left = "-90%"}, 20000)
         } else {
             setTimeout(() => {loading.style.opacity = 0}, 1000);
-            setTimeout(() => {unsuccess.style.opacity = 1}, 1300);
+            setTimeout(() => {unsuccess.style.opacity = 1; redo.style.opacity = 1}, 1300);
+            
+        }
+    }
+
+    var popupF = () => {
+        if (inAction === true) {
+            popup.style.opacity = 1;
         }
     }
 
@@ -328,7 +245,6 @@ window.onload = () => {
                 })
         })
     }
-
     
     visualize();
     getNumOfNodes();
