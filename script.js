@@ -68,8 +68,8 @@ window.onload = () => {
     searchInput.addEventListener("input", (e) => {
         let input = searchInput.value;
         if (input.length) {
-          results = searchData.filter((item) => {
-            return item.toLowerCase().includes(input.toLowerCase());
+          results = searchData.filter((elem) => {
+            return elem.toLowerCase().includes(input.toLowerCase());
           });
         }
         setSuggestions(results);
@@ -77,10 +77,9 @@ window.onload = () => {
 
     var setSuggestions = () => {
         const content = results
-            .map((item) => {
-                return `<li>${item}</li>`;
-            })
-        .join('');
+            .map((elem) => {
+                return `<li>${elem}</li>`;
+            }).join('');
         suggestions.innerHTML = `<ul>${content}</ul>`;
     }
 
@@ -125,7 +124,7 @@ window.onload = () => {
             
             description.id = "description";
             description.innerHTML = descriptions[i];
-
+    
             viewArea.appendChild(node);
             node.appendChild(circle);
             node.appendChild(title);
@@ -133,48 +132,46 @@ window.onload = () => {
             box.appendChild(name);
             box.appendChild(description);
             node.appendChild(box);
-            const style = getComputedStyle(source);
-            let n1top = parseInt(style.top) - 70 + "px";
-            let n1Left = parseInt(style.left) + 1 + "px";
-            let n2top = parseInt(style.top) - 40 + "px";
-            let n2left = parseInt(style.left) - 68 + "px";
-            let n3top = parseInt(style.top) - 40 + "px";
-            let n3left = parseInt(style.left) + 68 + "px";
-            let n4top = parseInt(style.top) + 40 + "px";
-            let n4left = parseInt(style.left) - 68 + "px";
-            let n5top = parseInt(style.top) + 40 + "px"; 
-            let n5left = parseInt(style.left) + 68 + "px";
-            let n6top = parseInt(style.top) + 70 + "px";
-            let n6left = parseInt(style.left) + 1 + "px";
-            let nodeInstance = document.querySelector("#node" + i);
-            nodeInstance.style.top = n1top; nodeInstance.style.left = n1Left;
-            arrow1.style.opacity = 1;
-            if (id === 1) {
-                nodeInstance.style.top = n2top; nodeInstance.style.left = n2left;
-                nodeInstance.style.opacity = 1;
-                arrow2.style.opacity = 1;
-            } else if (id === 2) {
-                nodeInstance.style.top = n3top; nodeInstance.style.left = n3left;
-                nodeInstance.style.opacity = 1;
-                arrow3.style.opacity = 1;
-            } else if (id === 3) {
-                nodeInstance.style.top = n4top; nodeInstance.style.left = n4left;
-                nodeInstance.style.opacity = 1;
-                arrow4.style.opacity = 1;
-            } else if (id === 4) {
-                nodeInstance.style.top = n5top; nodeInstance.style.left = n5left;
-                nodeInstance.style.opacity = 1;
-                arrow5.style.opacity = 1;
-            } else if (id === 5) {
-                nodeInstance.style.top = n6top; nodeInstance.style.left = n6left;
-                nodeInstance.style.opacity = 1;
-                arrow6.style.opacity = 1;
-            }
         }
-    }
-
-    var setNodes = () => {
-        let items = document.querySelector("")
+        for (let i = 0; i < nodesNum; i++) {
+            const style = getComputedStyle(origin);
+            var coordinatesY = {
+                0: parseInt(style.top) - 70 + "px",
+                1: parseInt(style.top) - 40 + "px",
+                2: parseInt(style.top) - 40 + "px",
+                3: parseInt(style.top) + 40 + "px",
+                4: parseInt(style.top) + 40 + "px",
+                5: parseInt(style.top) + 70 + "px",
+                6: parseInt(style.top) - 110 + "px",
+                7: parseInt(style.top) + "px",
+                8: parseInt(style.top) + 110 + "px",
+                9: parseInt(style.top) - 110 + "px",
+                10: parseInt(style.top) + "px",
+                11: parseInt(style.top) + 110 + "px"
+            }
+            var cordinatesX = {
+                0: parseInt(style.left) + 1 + "px",
+                1: parseInt(style.left) - 68 + "px",
+                2: parseInt(style.left) + 68 + "px",
+                3: parseInt(style.left) - 68 + "px",
+                4: parseInt(style.left) + 68 + "px",
+                5: parseInt(style.left) + 1 + "px",
+                6: parseInt(style.left) - 60 + "px",
+                7: parseInt(style.left) - 134 + "px",
+                8: parseInt(style.left) - 60 + "px",
+                9: parseInt(style.left) + 60 + "px",
+                10: parseInt(style.left) + 134 + "px",
+                11: parseInt(style.left) + 60 + "px"
+            }
+            let nodeInstance = document.querySelector("#node" + i);
+            let arrows = document.querySelector("#arrowContainer");
+            let arrow = document.querySelector("#arrow" + i);
+            arrows.style.opacity = 1;
+            arrow.style.opacity = 1;
+            nodeInstance.style.top = coordinatesY[i];
+            nodeInstance.style.left = cordinatesX[i];
+            nodeInstance.style.opacity = 1;
+        }
     }
 
     var getNumOfNodes = () => {
@@ -182,7 +179,7 @@ window.onload = () => {
             let value = numOfNodesInput.value.toLowerCase();
             nodesNum = value;
         })
-    }
+    } 
     var n = 0;
     var main = document.querySelector("#visualizationArea");
     var getCheckValue = () => {
@@ -190,7 +187,6 @@ window.onload = () => {
         for (let elem of container) {
             if (elem.className === "nodeClass") {
                 n++;
-                console.log(n)
             }
         }
         main.style.opacity = 0;
@@ -213,7 +209,7 @@ window.onload = () => {
             setTimeout(() => {popup.style.left = "-90%"}, 20000)
         } else {
             setTimeout(() => {loading.style.opacity = 0}, 1000);
-            setTimeout(() => {unsuccess.style.opacity = 1; redo.style.opacity = 1}, 1300);
+            setTimeout(() => {unsuccess.style.opacity = 1; redo.style.opacity = 1;}, 1300);
             
         }
     }
@@ -237,6 +233,7 @@ window.onload = () => {
                 .then(data => {
                     for (let n = 0; n < nodesNum; n++) {
                         names.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].full_name));
+                        console.log(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].full_name));
                         pfps.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].owner.avatar_url));
                         descriptions.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].description));
                         urls.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].html_url));
