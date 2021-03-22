@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <title>view</title>
+    <title>Repo searcher</title>
+    <link rel="icon" href="/imgs/favicon.png">
 </head>
 <body>
     <div id="top"></div>
     <div id="help">i</div>
     <div id="info">
-        [name] is a GitHub repo indentifier, hover on the nodes to make the widjets appear
+        GitHub repo indentifier, hover on the nodes to make the widjets appear
     </div>
     <div id="container">
         <div id="slider"><svg id="moon"  aria-hidden="true" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +21,7 @@
           </svg></div>
     </div>
     <div id="homePage">
-        <div id="title">Computer performance visualization</div>
+        <div id="title">GitHub repository searcher</div>
         <div id="startBT">Start visualization</div>
     </div>
     <div id="app">
@@ -41,23 +42,28 @@
         <div id="loadingContainer">
             <div id="loadingText">Loading output...<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="spinner-third" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="spinner"><path fill="currentColor" d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" ></path></svg></div>
             <div id="successfullLoading">Successfull loading <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="correct"><path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg></div>
-            <div id="unsuccessfullLoading">Unsuccessfull loading <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" id="wrong"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></div>
-            <div id="tryAgain">Redo</div>
-            <div id="continue">Continue</div>
+            <div id="unsuccessfullLoading">Unsuccessfull loading <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" id="wrong"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg><br>[Ctrl + R] to repeat</div>
         </div>
         <div id="visualizationArea">
             <div id="source">
                 <div id="circle"></div>
                 <div id="arrowContainer">
                     <div id="ballTitle">criterion</div>
+                    <div id="arrow0" class="arrow"></div>
                     <div id="arrow1" class="arrow"></div>
                     <div id="arrow2" class="arrow"></div>
                     <div id="arrow3" class="arrow"></div>
                     <div id="arrow4" class="arrow"></div>
                     <div id="arrow5" class="arrow"></div>
                     <div id="arrow6" class="arrow"></div>
+                    <div id="arrow7" class="arrow"></div>
+                    <div id="arrow8" class="arrow"></div>
+                    <div id="arrow9" class="arrow"></div>
+                    <div id="arrow10" class="arrow"></div>
+                    <div id="arrow11" class="arrow"></div>
                 </div>
             </div>
+            <div id="hint"><strong>Want to try again?</strong><br>Do Ctrl + R</div>
         </div>
     </div>
 </body>
