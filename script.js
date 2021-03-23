@@ -233,7 +233,6 @@ window.onload = () => {
                 .then(data => {
                     for (let n = 0; n < nodesNum; n++) {
                         names.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].full_name));
-                        console.log(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].full_name));
                         pfps.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].owner.avatar_url));
                         descriptions.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].description));
                         urls.push(JSON.stringify(data.items[Math.floor(Math.random() * data.items.length)].html_url));
