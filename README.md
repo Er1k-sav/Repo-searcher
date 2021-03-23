@@ -7,7 +7,7 @@
 
 **🤔What is it?**
 ---
-GitHub Repository searcher is a simple web application which you can use to may find some really interesting projects made by other users on the platform with a specific technologie!
+GitHub Repository searcher is a simple web application which you can use to find some really interesting projects made by other users on the platform with a specific technologie!
 
 **⚙How to use it?**
 ---
