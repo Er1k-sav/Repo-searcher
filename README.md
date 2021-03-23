@@ -1,5 +1,4 @@
-![](https://user-images.githubusercontent.com/71546251/111923014-6a215500-8a9d-11eb-9d48-f74f3fb1420c.png)
-
+![](https://user-images.githubusercontent.com/71546251/112178688-40317500-8bfa-11eb-9f91-e45491647c76.png)
 
 **👓Timathon**  
 **⚓Weight** *20KB*
