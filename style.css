@@ -123,6 +123,10 @@ body {
     }
 }
 
+input:focus {
+    outline: none;
+}
+
 #hint {
     position: absolute;
     display: table-cell;
