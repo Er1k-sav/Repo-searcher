@@ -655,7 +655,7 @@ input::-webkit-inner-spin-button {
     height: 45%;
     background-color: gray;
     border-radius: 50%;
-    z-index: 20;
+    z-index: 31;
 }
 
 #ballTitle {
@@ -685,7 +685,7 @@ input::-webkit-inner-spin-button {
 
 #linkTitle:hover {
     color: #FB8122;
-    z-index: 30;
+    z-index: 32;
 }
 
 .nodeClass {
@@ -758,7 +758,7 @@ input::-webkit-inner-spin-button {
 
 #circle:hover ~ #box {
     opacity: 1;
-    z-index: 24;
+    z-index: 35;
 }
 
 #circle:hover ~ #linkTitle {
