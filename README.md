@@ -17,7 +17,9 @@ GitHub Repository searcher is a simple web application which you can use to may 
 -Insert a number between 1 and 12 to set the amount of nodes in this input, after that you're ready to visualize!  
  ![](https://user-images.githubusercontent.com/71546251/112065206-89cf8080-8b64-11eb-913c-c99f4078e98f.png)
  
- #Make sure to download it correcctly and extract it for the web application to function properly! 
+ 
+ ---
+ **Make sure to download it correcctly and extract it for the web application to function properly!** 
 
 
 
