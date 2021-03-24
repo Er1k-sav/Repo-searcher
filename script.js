@@ -222,7 +222,8 @@ window.onload = () => {
 
     var visualize = () => {
         visualizeBT.addEventListener("click", () => {
-            visualizeBT.style.top = "-1000%";
+            visualizeBT.style.opacity = 0;
+            visualizeBT.style.zIndex = 1;
             let value = searchInput.value.toLowerCase();
             criterion = value;
             ballTitle.innerHTML = criterion;
