@@ -554,7 +554,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: -80%;
     left: 32%;
-    height: 182%;
+    height: 176%;
     opacity: 0;
 }
 
@@ -563,7 +563,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: -80%;
     left: -23%;
-    height: 182%;
+    height: 176%;
     opacity: 0;
 }
 
@@ -572,7 +572,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: -305%;
     left: -20%;
-    height: 375%;
+    height: 371%;
     opacity: 0;
 }
 
@@ -581,7 +581,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: -110%;
     left: -50%;
-    height: 375%;
+    height: 371%;
     opacity: 0;
 }
 
@@ -590,7 +590,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: 90%;
     left: -20%;
-    height: 375%;
+    height: 371%;
     opacity: 0;
 }
 
@@ -599,7 +599,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: 90%;
     left: 30%;
-    height: 375%;
+    height: 371%;
     opacity: 0;
 }
 
@@ -608,7 +608,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: -110%;
     left: 60%;
-    height: 375%;
+    height: 371%;
     opacity: 0;
 }
 
@@ -617,7 +617,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: -305%;
     left: 30%;
-    height: 375%;
+    height: 371%;
     opacity: 0;
 }
 
@@ -626,7 +626,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: 48%;
     left: -23%;
-    height: 182%;
+    height: 176%;
     opacity: 0;
 }
 
@@ -635,7 +635,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     top: 48%;
     left: 32%;
-    height: 182%;
+    height: 176%;
     opacity: 0;
 }
 
