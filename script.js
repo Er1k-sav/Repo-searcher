@@ -5,7 +5,7 @@ window.onload = () => {
     const app = document.querySelector("#app");
     const startBT = document.querySelector("#startBT");
     const searchInput = document.querySelector("#searchInput");
-    const visualieBT = document.querySelector("#visualizeBT");
+    const visualizeBT = document.querySelector("#visualizeBT");
     const redo = document.querySelector("#continue");
     const suggestions = document.querySelector(".suggestions");
     const source = document.querySelector("#source");
@@ -221,7 +221,7 @@ window.onload = () => {
     }
 
     var visualize = () => {
-        visualieBT.addEventListener("click", () => {
+        visualizeBT.addEventListener("click", () => {
             visualizeBT.style.top = "-1000%";
             let value = searchInput.value.toLowerCase();
             criterion = value;
