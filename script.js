@@ -136,32 +136,32 @@ window.onload = () => {
         for (let i = 0; i < nodesNum; i++) {
             const style = getComputedStyle(origin);
             var coordinatesY = {
-                0: parseInt(style.top) - 70 + "px",
-                1: parseInt(style.top) - 40 + "px",
-                2: parseInt(style.top) - 40 + "px",
-                3: parseInt(style.top) + 40 + "px",
-                4: parseInt(style.top) + 40 + "px",
-                5: parseInt(style.top) + 70 + "px",
-                6: parseInt(style.top) - 110 + "px",
-                7: parseInt(style.top) + "px",
-                8: parseInt(style.top) + 110 + "px",
-                9: parseInt(style.top) - 110 + "px",
-                10: parseInt(style.top) + "px",
-                11: parseInt(style.top) + 110 + "px"
+                0: "34%",
+                1: "39.5%",
+                2: "39.5%",
+                3: "54%",
+                4: "54%",
+                5: "60%",
+                6: "27.2%",
+                7: "47%",
+                8: "66.5%",
+                9: "27.2%",
+                10: "47%",
+                11: "66.5%"
             }
             var cordinatesX = {
-                0: parseInt(style.left) + 1 + "px",
-                1: parseInt(style.left) - 68 + "px",
-                2: parseInt(style.left) + 68 + "px",
-                3: parseInt(style.left) - 68 + "px",
-                4: parseInt(style.left) + 68 + "px",
-                5: parseInt(style.left) + 1 + "px",
-                6: parseInt(style.left) - 60 + "px",
-                7: parseInt(style.left) - 134 + "px",
-                8: parseInt(style.left) - 60 + "px",
-                9: parseInt(style.left) + 60 + "px",
-                10: parseInt(style.left) + 134 + "px",
-                11: parseInt(style.left) + 60 + "px"
+                0: "25%",
+                1: "17%",
+                2: "33%",
+                3: "17%",
+                4: "33%",
+                5: "25%",
+                6: "18%",
+                7: "10%",
+                8: "18%",
+                9: "32.1%",
+                10: "40%",
+                11: "32%"
             }
             let nodeInstance = document.querySelector("#node" + i);
             let arrows = document.querySelector("#arrowContainer");
