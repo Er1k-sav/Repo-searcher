@@ -8,6 +8,7 @@ window.onload = () => {
     const visualizeBT = document.querySelector("#visualizeBT");
     const redo = document.querySelector("#continue");
     const suggestions = document.querySelector(".suggestions");
+    const visualizeArrow = document.querySelector("#visualizeArrow");
     const source = document.querySelector("#source");
     const ballTitle = document.querySelector("#ballTitle");
     const arrow = document.querySelector("#arrowContainer");
@@ -224,6 +225,7 @@ window.onload = () => {
         visualizeBT.addEventListener("click", () => {
             visualizeBT.style.opacity = 0;
             visualizeBT.style.zIndex = 1;
+            visualizeArrow.style.opacity = 0;
             let value = searchInput.value.toLowerCase();
             criterion = value;
             ballTitle.innerHTML = criterion;
