@@ -87,6 +87,7 @@ body {
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    border-bottom: 5px solid rgba(8, 11, 15, 0.5);
     color: #E1E2E2;
     left: 6%;
     top: 4%;
